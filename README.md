@@ -154,6 +154,33 @@ rid['sepal_width']
 # Output:
 <img width="851" height="287" alt="image" src="https://github.com/user-attachments/assets/298a7541-e151-4c48-b48b-0ead834e10e8" />
 
+```
+rid=ir[~((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
+rid
+```
 
-# Result
-          <<include your Result here>>
+# Output:
+<img width="815" height="501" alt="image" src="https://github.com/user-attachments/assets/b48c81ed-2b28-4f76-8248-7c45b4ac432b" />
+
+```
+rid=ir[((ir.sepal_width>(q1-1.5*iqr))&(ir.sepal_width<(q3+1.5*iqr)))]
+rid['sepal_width']
+```
+
+
+# Output:
+<img width="740" height="518" alt="image" src="https://github.com/user-attachments/assets/7d198506-eb7d-4262-9236-b4039c1e5f0b" />
+
+```
+import numpy as np
+import scipy.stats as stats
+z=np.abs(stats.zscore(ir.sepal_width))
+z
+```
+
+# Output:
+<img width="897" height="643" alt="image" src="https://github.com/user-attachments/assets/0fe5420b-8648-40ea-91cb-0d28e538dbe1" />
+
+# Result:
+Thus the programs are executed successfully.
+          
